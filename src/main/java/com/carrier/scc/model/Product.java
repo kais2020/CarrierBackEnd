@@ -11,6 +11,7 @@ public class Product {
     @Id
     @GeneratedValue
     private int id;
+    private String code;
     private String nom;
     private int prix;
     @OneToMany(mappedBy = "product")
@@ -19,8 +20,9 @@ public class Product {
     public Product() {
     }
 
-    public Product(int id, String nom, int prix) {
+    public Product(int id, String code, String nom, int prix) {
         this.id = id;
+        this.code = code;
         this.nom = nom;
         this.prix = prix;
     }
@@ -32,6 +34,10 @@ public class Product {
     public void setId(int id) {
         this.id = id;
     }
+
+    public String getCode() {    return code;   }
+
+    public void setCode(String code) {      this.code = code;    }
 
     public String getNom() {
         return nom;

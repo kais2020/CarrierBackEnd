@@ -17,13 +17,22 @@ public class CamionController {
     private CamionDao camionDao;
 
     //Afficher tou les camions
-    @GetMapping(value = "/camions")
+    @GetMapping(value = "camions")
     public List<Camion> afficheToutCamions(){
         return camionDao.findAll();
     }
     //Affiche un camion
-    @GetMapping(value = "camions/{id}")
-    public Optional<Camion> afficheUnCamion(@PathVariable int id){
-       return camionDao.findById(id);
+    @GetMapping(value = "camions/id/{id}")
+    public Optional<Camion> afficheCamionParId(@PathVariable int id){
+
+        return camionDao.findById(id);
+    }
+    @GetMapping(value = "camions/code/{code}")
+    public Camion afficheCamionParCode(@PathVariable String code){
+        return camionDao.findByCode(code);
+    }
+    @GetMapping(value = "camions/matricule/{matricule}")
+    public Camion afficheCamionParMatricule(@PathVariable String mat){
+        return camionDao.findByMatricule(mat);
     }
 }

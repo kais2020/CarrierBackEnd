@@ -6,4 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CamionDao extends JpaRepository<Camion,Integer> {
+    Camion findByCode(String code);
+
+    Camion findByMatricule(String mat);
 }

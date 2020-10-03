@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BlClientDao extends JpaRepository<BlClient,Integer> {
+    BlClient findByNum(int num);
 }

@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface ProductDao extends JpaRepository<Product,Integer> {
+    Product findByCode(String code);
 
 }

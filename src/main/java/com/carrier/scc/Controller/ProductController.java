@@ -26,10 +26,15 @@ public class ProductController {
     }
 
     //Produit {id}
-    @GetMapping(value = "produits/{id}")
-    public Optional<Product> afficheUnProduit(@PathVariable int id){
+    @GetMapping(value = "produits/id/{id}")
+    public Optional<Product> afficheUnProduitParId(@PathVariable int id){
 
         return productDao.findById(id);
 
+    }
+    //Produit par code
+    @GetMapping(value = "produits/code/{code}")
+    public Product afficheUnProduitParCode(@PathVariable String code){
+        return productDao.findByCode(code);
     }
 }
