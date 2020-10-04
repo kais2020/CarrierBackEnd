@@ -29,4 +29,8 @@ public class BlClientController {
     public BlClient afficheBlClientParNum(@PathVariable int num){
         return blClientDao.findByNum(num);
     }
+    @GetMapping(value = "blclients/liste/parclient/{client}")
+    public List<BlClient> afficheListeBlParClient(@PathVariable int client_id){
+        return blClientDao.findAllByClient_id(client_id);
+    }
 }

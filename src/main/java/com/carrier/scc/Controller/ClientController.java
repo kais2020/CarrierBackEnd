@@ -26,4 +26,26 @@ public class ClientController {
     public Client afficheClientParCode(@PathVariable String code){
         return clientDao.findByCode(code);
     }
+    @GetMapping(value = "clients/nom/{nom}")
+    public Client afficheClientParNom(@PathVariable String nom){
+        return  clientDao.findByNom(nom);
+    }
+    @GetMapping(value = "clients/codetva/{tva}")
+    public Client afficheClientParCodeTva(@PathVariable String tva){
+        return clientDao.findByCodeTVA(tva);
+    }
+    @GetMapping(value = "clients/liste/code/{code}")
+    public List<Client> afficheListeClientParCode(@PathVariable String code){
+        return  clientDao.findAllByCode(code);
+    }
+    @GetMapping(value = "clients/liste/nom/{nom}")
+    public List<Client> afficheListeClientParNom(@PathVariable String nom){
+        return clientDao.findAllByNom(nom);
+    }
+    @GetMapping(value = "clients/liste/ville/{ville}")
+    public List<Client> afficheListeClientParVille(@PathVariable String ville){
+        return  clientDao.findAllByVille(ville);
+    }
+
+
 }

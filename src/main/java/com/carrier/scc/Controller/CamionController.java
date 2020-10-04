@@ -18,7 +18,7 @@ public class CamionController {
 
     //Afficher tou les camions
     @GetMapping(value = "camions")
-    public List<Camion> afficheToutCamions(){
+    public List<Camion> afficheAllCamions(){
         return camionDao.findAll();
     }
     //Affiche un camion
@@ -35,4 +35,13 @@ public class CamionController {
     public Camion afficheCamionParMatricule(@PathVariable String mat){
         return camionDao.findByMatricule(mat);
     }
+    @GetMapping(value = "camions/liste/code/{code}")
+    public List<Camion> afficheAllCamionParCode(@PathVariable String code){
+        return camionDao.findAllByCode(code);
+    }
+    @GetMapping(value = "camions/liste/matricule/{matricule}")
+    public List<Camion> afficheAllCamionParMatricule(@PathVariable String mat){
+        return camionDao.findAllByMatricule(mat);
+    }
+
 }

@@ -14,6 +14,7 @@ public class Client {
     private String code;
     private String nom;
     private String adresse;
+    private String ville;
     private String codeTVA;
 
     @OneToMany(mappedBy = "client")
@@ -26,11 +27,12 @@ public class Client {
     public Client() {
     }
 
-    public Client(int id, String code, String nom, String adresse, String codeTVA) {
+    public Client(int id, String code, String nom, String adresse, String ville, String codeTVA) {
         this.id = id;
         this.code = code;
         this.nom = nom;
         this.adresse = adresse;
+        this.ville = ville;
         this.codeTVA = codeTVA;
     }
 
@@ -56,6 +58,14 @@ public class Client {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public String getVille() {
+        return ville;
+    }
+
+    public void setVille(String ville) {
+        this.ville = ville;
     }
 
     public String getAdresse() {
