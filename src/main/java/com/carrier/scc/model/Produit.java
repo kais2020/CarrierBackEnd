@@ -7,20 +7,20 @@ import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-public class Product {
+public class Produit {
     @Id
     @GeneratedValue
     private int id;
     private String code;
     private String nom;
     private int prix;
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "produit")
     private List<BlClient> blClients;
 
-    public Product() {
+    public Produit() {
     }
 
-    public Product(int id, String code, String nom, int prix) {
+    public Produit(int id, String code, String nom, int prix) {
         this.id = id;
         this.code = code;
         this.nom = nom;

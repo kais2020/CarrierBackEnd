@@ -18,20 +18,20 @@ public class BlClient {
     @JoinColumn(name = "camion_id")
     private Camion camion;
     @ManyToOne
-    @JoinColumn(name = "product_id")
-    private Product product;
+    @JoinColumn(name = "produit_id")
+    private Produit produit;
 
     public BlClient() {
     }
 
-    public BlClient(int id, int num, Date dateBl, int qte, Client client, Camion camion, Product product) {
+    public BlClient(int id, int num, Date dateBl, int qte, Client client, Camion camion, Produit produit) {
         this.id = id;
         this.num = num;
         this.dateBl = dateBl;
         this.qte = qte;
         this.client = client;
         this.camion = camion;
-        this.product = product;
+        this.produit = produit;
     }
 
     public int getId() {
@@ -82,12 +82,12 @@ public class BlClient {
         this.camion = camion;
     }
 
-    public Product getProduct() {
-        return product;
+    public Produit getProduit() {
+        return produit;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void setProduit(Produit produit) {
+        this.produit = produit;
     }
 
     @Override
@@ -99,7 +99,7 @@ public class BlClient {
                 ", qte=" + qte +
                 ", client=" + client +
                 ", camion=" + camion +
-                ", product=" + product +
+                ", product=" + produit +
                 '}';
     }
 }
