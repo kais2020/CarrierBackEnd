@@ -6,7 +6,7 @@ import java.util.Date;
 @Entity
 public class BlClient {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private int num;
     private Date dateBl;

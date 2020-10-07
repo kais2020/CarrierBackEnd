@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProduitDao extends JpaRepository<Produit,Integer> {
+    Produit findById(int id);
     Produit findByCode(String code);
 
 }

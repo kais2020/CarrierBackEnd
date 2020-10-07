@@ -6,7 +6,7 @@ import java.util.List;
 @Entity
 public class Camion {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String code;
     private String matricule;
