@@ -3,18 +3,22 @@ package com.carrier.scc.Controller;
 import com.carrier.scc.dao.ClientDao;
 import com.carrier.scc.exceptions.ClientIntrouvableException;
 import com.carrier.scc.model.Client;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
+@Api(description = "Gestion des Clients")
 @RestController
 public class ClientController {
     @Autowired
     private ClientDao clientDao;
 /* Requêtes GET */
     //Affiche All Client
+    @ApiOperation(value = "Récuperer tout Clients")
     @GetMapping(value = "clients")
     public List<Client> afficheToutClients(){
 
@@ -61,6 +65,7 @@ public class ClientController {
 
 /* Requêtes POST  */
     //Save Client
+    @ApiOperation(value = "Sauvgarger un Produit")
     @PostMapping(value = "clients")
     public void saveClient(@RequestBody Client client){
          clientDao.save(client);
@@ -68,6 +73,7 @@ public class ClientController {
 
 /* Requêtes DELETE */
     //Delete Client par Id
+    @ApiOperation(value = "Suprimer un Produit par son identifiant")
     @DeleteMapping(value = "clients/id/{id}")
     public void deleteClient(@PathVariable int id){
         clientDao.deleteById(id);
