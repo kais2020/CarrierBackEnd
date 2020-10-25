@@ -14,6 +14,7 @@ import java.util.Optional;
 
 @Api(description = "Gestion des Produits")
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class ProduitController {
 
     @Autowired

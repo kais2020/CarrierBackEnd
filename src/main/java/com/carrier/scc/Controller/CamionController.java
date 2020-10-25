@@ -3,14 +3,13 @@ package com.carrier.scc.Controller;
 import com.carrier.scc.dao.CamionDao;
 import com.carrier.scc.model.Camion;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class CamionController {
 
     @Autowired
@@ -42,6 +41,10 @@ public class CamionController {
     @GetMapping(value = "camions/liste/matricule/{matricule}")
     public List<Camion> afficheAllCamionParMatricule(@PathVariable String mat){
         return camionDao.findAllByMatricule(mat);
+    }
+    @PostMapping(value = "camions")
+    public void saveCamion(@RequestBody Camion camion){
+        camionDao.save(camion);
     }
 
 }

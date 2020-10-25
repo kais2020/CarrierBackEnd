@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @Api(description = "Gestion des Clients")
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class ClientController {
     @Autowired
     private ClientDao clientDao;
@@ -25,6 +26,7 @@ public class ClientController {
         return clientDao.findAll();
     }
     //Affiche Client par id
+    @ApiOperation(value = "Récuperer un Client par identifiant")
     @GetMapping(value = "clients/id/{id}")
     public Client afficheClientParId(@PathVariable int id) throws ClientIntrouvableException {
 
@@ -33,31 +35,37 @@ public class ClientController {
         return client;
     }
     //Affiche Client par code
+    @ApiOperation(value = "Récuperer un Client par code")
     @GetMapping(value = "clients/code/{code}")
     public Client afficheClientParCode(@PathVariable String code){
         return clientDao.findByCode(code);
     }
     //Affiche Client par nom
+    @ApiOperation(value = "Récuperer un Client par nom")
     @GetMapping(value = "clients/nom/{nom}")
     public Client afficheClientParNom(@PathVariable String nom){
         return  clientDao.findByNom(nom);
     }
     //Affiche Client par code TVA
+    @ApiOperation(value = "Récuperer un Client par  code TVA")
     @GetMapping(value = "clients/codetva/{tva}")
     public Client afficheClientParCodeTva(@PathVariable String tva){
         return clientDao.findByCodeTVA(tva);
     }
     //Affiche Liste Client par code
+    @ApiOperation(value = "Récuperer liste Clients par code")
     @GetMapping(value = "clients/liste/code/{code}")
     public List<Client> afficheListeClientParCode(@PathVariable String code){
         return  clientDao.findAllByCode(code);
     }
     //Affiche Liste Client par nom
+    @ApiOperation(value = "Récuperer liste Clients par nom")
     @GetMapping(value = "clients/liste/nom/{nom}")
     public List<Client> afficheListeClientParNom(@PathVariable String nom){
         return clientDao.findAllByNom(nom);
     }
     //Affiche Liste Client par ville
+    @ApiOperation(value = "Récuperer liste Clients par ville")
     @GetMapping(value = "clients/liste/ville/{ville}")
     public List<Client> afficheListeClientParVille(@PathVariable String ville){
         return  clientDao.findAllByVille(ville);
