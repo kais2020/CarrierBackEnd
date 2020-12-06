@@ -46,5 +46,9 @@ public class CamionController {
     public void saveCamion(@RequestBody Camion camion){
         camionDao.save(camion);
     }
+    @DeleteMapping(value = "camions/id/{id}")
+    public void deleteCamion(@PathVariable int id){
+        camionDao.deleteById(id);
+    }
 
 }

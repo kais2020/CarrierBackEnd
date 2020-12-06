@@ -10,7 +10,12 @@ public class BlClient {
     private int id;
     private int num;
     private Date dateBl;
-    private int qte;
+    private float qte;
+    private float puVente;
+    private float ht;
+    private float taxe;
+    private float tva;
+    private float ttc;
     @ManyToOne
     @JoinColumn(name = "client_id")
     private Client client;
@@ -24,11 +29,16 @@ public class BlClient {
     public BlClient() {
     }
 
-    public BlClient(int id, int num, Date dateBl, int qte, Client client, Camion camion, Produit produit) {
+    public BlClient(int id, int num, Date dateBl, float qte,float puVente ,float ht, float taxe, float tva, float ttc, Client client, Camion camion, Produit produit) {
         this.id = id;
         this.num = num;
         this.dateBl = dateBl;
         this.qte = qte;
+        this.puVente=puVente;
+        this.ht = ht;
+        this.taxe = taxe;
+        this.tva = tva;
+        this.ttc = ttc;
         this.client = client;
         this.camion = camion;
         this.produit = produit;
@@ -58,12 +68,52 @@ public class BlClient {
         this.dateBl = dateBl;
     }
 
-    public int getQte() {
+    public float getQte() {
         return qte;
     }
 
-    public void setQte(int qte) {
+    public void setQte(float qte) {
         this.qte = qte;
+    }
+
+    public float getPuVente() {
+        return puVente;
+    }
+
+    public void setPuVente(float puVente) {
+        this.puVente = puVente;
+    }
+
+    public float getHt() {
+        return ht;
+    }
+
+    public void setHt(float ht) {
+        this.ht = ht;
+    }
+
+    public float getTaxe() {
+        return taxe;
+    }
+
+    public void setTaxe(float taxe) {
+        this.taxe = taxe;
+    }
+
+    public float getTva() {
+        return tva;
+    }
+
+    public void setTva(float tva) {
+        this.tva = tva;
+    }
+
+    public float getTtc() {
+        return ttc;
+    }
+
+    public void setTtc(float ttc) {
+        this.ttc = ttc;
     }
 
     public Client getClient() {
@@ -97,9 +147,13 @@ public class BlClient {
                 ", num=" + num +
                 ", dateBl=" + dateBl +
                 ", qte=" + qte +
+                ", ht=" + ht +
+                ", taxe=" + taxe +
+                ", tva=" + tva +
+                ", ttc=" + ttc +
                 ", client=" + client +
                 ", camion=" + camion +
-                ", product=" + produit +
+                ", produit=" + produit +
                 '}';
     }
 }
