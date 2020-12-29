@@ -12,8 +12,7 @@ insert into client(id,code,nom,adresse,ville,codeTVA) values(6,'006','tass','Tun
 insert into client(id,code,nom,adresse,ville,codeTVA) values(7,'007','kais','Tunis ville','Tunis','121212AZE000');
 insert into client(id,code,nom,adresse,ville,codeTVA) values(8,'008','Tay','Tunis CENTRE','Tunis','454545AZE000');
 insert into client(id,code,nom,adresse,ville,codeTVA) values(9,'009','tass','Tunis BEN AROUS','Tunis','8989898ERT000');
-
-insert into BL_CLIENT (ID ,DATE_BL ,HT ,NUM ,QTE ,TAXE ,TTC ,TVA ,CAMION_ID ,CLIENT_ID ,PRODUIT_ID )
-values (1,current_timestamp,100,'1',20,1,119,19,1,1,1);
-
 insert into utilisateur(id,nom,login,password) values(1,'Admin','admin','1');
+insert into BL_CLIENT (ID ,DATE_BL ,HT ,NUM ,QTE ,pu_vente,TAXE ,TTC ,TVA ,CAMION_ID ,CLIENT_ID ,PRODUIT_ID )
+values (1,current_timestamp,100,'1',20,11,1,119,19,1,1,1);
+

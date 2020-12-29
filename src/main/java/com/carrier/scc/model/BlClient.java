@@ -147,6 +147,7 @@ public class BlClient {
                 ", num=" + num +
                 ", dateBl=" + dateBl +
                 ", qte=" + qte +
+                ", puVente=" + puVente +
                 ", ht=" + ht +
                 ", taxe=" + taxe +
                 ", tva=" + tva +
